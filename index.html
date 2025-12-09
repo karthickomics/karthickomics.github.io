@@ -4,51 +4,94 @@
   <meta charset="UTF-8" />
   <title>Karthick Gajendiran | Computational Biology</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Coding-style font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: #1f2933;
+    :root {
+      --bg-main: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #1f2933;
+      --accent-dark: #0c2340;
     }
 
-    /* ---------- HEADER ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.12) 0, transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.10) 0, transparent 55%),
+        #ffffff;
+      color: var(--text-main);
+    }
+
+    /* ---------- HEADER / HERO ---------- */
     header {
-      background: #0c2340;
       color: #ffffff;
-      padding: 40px 20px 32px;
+      padding: 46px 20px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      background-image:
+        linear-gradient(to bottom right, rgba(12, 35, 64, 0.95), rgba(37, 99, 235, 0.85)),
+        url("images/wheat_genomics_header.jpg"); /* optional: add your own wheat/stem rust image here */
+      background-size: cover;
+      background-position: center;
     }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 60%);
+      pointer-events: none;
+    }
+
     header h1 {
+      position: relative;
       margin: 0 0 10px 0;
-      font-size: 2rem;
+      font-size: 2.1rem;
+      letter-spacing: 0.03em;
+      z-index: 1;
     }
+
     header p {
+      position: relative;
       margin: 0;
       font-size: 0.95rem;
       opacity: 0.9;
+      z-index: 1;
     }
 
     /* ---------- ANIMATED ICON STRIP ---------- */
     .emoji-row {
-      margin-top: 18px;
+      position: relative;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 18px;
-      font-size: 1.7rem;
+      gap: 20px;
+      font-size: 1.9rem;
+      z-index: 1;
     }
     .emoji {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      background: rgba(15, 23, 42, 0.55);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
       animation: float 3.5s ease-in-out infinite;
+      backdrop-filter: blur(4px);
     }
     .emoji:nth-child(2) {
       animation-delay: 0.5s;
@@ -59,7 +102,7 @@
 
     @keyframes float {
       0%   { transform: translateY(0px);   opacity: 0.9; }
-      50%  { transform: translateY(-6px);  opacity: 1;   }
+      50%  { transform: translateY(-8px);  opacity: 1;   }
       100% { transform: translateY(0px);   opacity: 0.9; }
     }
 
@@ -69,28 +112,44 @@
       margin: 0 auto;
       padding: 32px 20px 48px;
     }
+
+    section {
+      margin-bottom: 28px;
+      padding: 18px 20px 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
     h2 {
       font-size: 1.3rem;
       margin-top: 0;
-      color: #0c2340;
+      margin-bottom: 6px;
+      color: var(--accent-dark);
     }
-    section {
-      margin-bottom: 32px;
+
+    section p {
+      margin: 6px 0 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
     }
 
     .skills span {
       display: inline-block;
       margin: 4px 6px 6px 0;
       padding: 6px 10px;
-      border-radius: 4px;
+      border-radius: 999px;
       background: #f3f4f6;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
+
     ul {
       padding-left: 18px;
       margin: 8px 0 0 0;
       font-size: 0.95rem;
     }
+
     a {
       color: #0c2340;
       text-decoration: none;
@@ -106,6 +165,23 @@
       background: #f5f5f5;
       color: #6b7280;
     }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 36px 16px 32px;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .emoji {
+        width: 46px;
+        height: 46px;
+        font-size: 1.7rem;
+      }
+      section {
+        padding: 16px 16px 18px;
+      }
+    }
   </style>
 </head>
 
@@ -114,10 +190,10 @@
     <h1>Karthick Gajendiran</h1>
     <p>PhD Student, Plant Science · Plant Immunity · Genomics & Computational Biology (KAUST)</p>
 
-    <!-- Animated plant / fungus / DNA icons -->
+    <!-- Animated wheat / pathogen / DNA icons -->
     <div class="emoji-row">
-      <div class="emoji">🌱</div>
-      <div class="emoji">🍄</div>
+      <div class="emoji">🌾</div>
+      <div class="emoji">🦠</div>
       <div class="emoji">🧬</div>
     </div>
   </header>
@@ -164,14 +240,13 @@
           View my profile
         </a>
       </p>
-      </p>
     </section>
 
     <section>
       <h2>Conferences & Workshops</h2>
       <ul>
-        <li><strong>PAG33 – Plant & Animal Genome Conference</strong>, San Diego, USA – Poster presenter, 2025.</li>
-        <li><strong>Gordon Research Conference</strong>, Cellular and Molecular Biology USA – Participant.</li>
+        <li><strong>PAG33 – Plant &amp; Animal Genome Conference</strong>, San Diego, USA – Poster presenter, 2025.</li>
+        <li><strong>Gordon Research Conference</strong>, Cellular and Molecular Biology, USA – Participant.</li>
         <li><strong>ICRPMC 2025</strong>, Vancouver, Canada – Presenter and Dr. Pierre Hucl Early Career Award recipient.</li>
         <li><strong>Evogenomics Workshop</strong>, Czech Republic – Attendee (2023) and Mentor/Teaching Assistant (2024).</li>
       </ul>
@@ -180,7 +255,7 @@
     <section>
       <h2>Awards & Fellowships</h2>
       <ul>
-        <li><strong>Orange Knowledge program (OKP) Fellowship</strong>, The Netherlands (2020–2022).</li>
+        <li><strong>Orange Knowledge Program (OKP) Fellowship</strong>, The Netherlands (2020–2022).</li>
         <li><strong>KAUST Graduate Fellowship</strong>, Saudi Arabia (2022–2027).</li>
         <li><strong>Dr. Pierre Hucl Early Career Award</strong>, ICRPMC 2025.</li>
       </ul>
