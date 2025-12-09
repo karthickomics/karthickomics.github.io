@@ -11,11 +11,15 @@
       background: #ffffff;
       color: #1f2933;
     }
+
+    /* ---------- HEADER ---------- */
     header {
       background: #0c2340;
       color: #ffffff;
-      padding: 40px 20px;
+      padding: 40px 20px 32px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     header h1 {
       margin: 0 0 10px 0;
@@ -26,6 +30,40 @@
       font-size: 0.95rem;
       opacity: 0.9;
     }
+
+    /* ---------- ANIMATED ICON STRIP ---------- */
+    .emoji-row {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 1.7rem;
+    }
+    .emoji {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      animation: float 3.5s ease-in-out infinite;
+    }
+    .emoji:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    .emoji:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0px);   opacity: 0.9; }
+      50%  { transform: translateY(-6px);  opacity: 1;   }
+      100% { transform: translateY(0px);   opacity: 0.9; }
+    }
+
+    /* ---------- MAIN LAYOUT ---------- */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -39,6 +77,7 @@
     section {
       margin-bottom: 32px;
     }
+
     .skills span {
       display: inline-block;
       margin: 4px 6px 6px 0;
@@ -59,6 +98,7 @@
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       padding: 16px;
@@ -73,6 +113,13 @@
   <header>
     <h1>Karthick Gajendiran</h1>
     <p>PhD Student, Plant Science · Plant Immunity · Genomics & Computational Biology (KAUST)</p>
+
+    <!-- Animated plant / fungus / DNA icons -->
+    <div class="emoji-row">
+      <div class="emoji">🌱</div>
+      <div class="emoji">🍄</div>
+      <div class="emoji">🧬</div>
+    </div>
   </header>
 
   <main>
@@ -119,23 +166,26 @@
       </p>
       </p>
     </section>
-<section>
-  <h2>Conferences & Workshops</h2>
-  <ul>
-    <li><strong>PAG33 – Plant & Animal Genome Conference</strong>, San Diego, USA – Poster presenter, 2025.</li>
-    <li><strong>Gordon Research Conference</strong>, Cellular and Molecular Fungal Biology USA – Participant.</li>
-    <li><strong>ICRPMC 2025</strong>, Vancouver, Canada – Presenter and Dr. Pierre Hucl Early Career Award recipient.</li>
-    <li><strong>Evogenomics Workshop</strong>, Czech Republic – Attendee (2023) and Mentor/Teaching Assistant (2024).</li>
-  </ul>
-</section>
+
     <section>
-  <h2>Awards & Fellowships</h2>
-  <ul>
-    <li><strong>Orange Knowledge Program Fellowship</strong>, The Netherlands (2020–2022).</li>
-    <li><strong>KAUST Graduate Fellowship</strong>, Saudi Arabia (2022–2027).</li>
-    <li><strong>Dr. Pierre Hucl Early Career Award</strong>, ICRPMC 2025.</li>
-  </ul>
-</section>
+      <h2>Conferences & Workshops</h2>
+      <ul>
+        <li><strong>PAG33 – Plant & Animal Genome Conference</strong>, San Diego, USA – Poster presenter, 2025.</li>
+        <li><strong>Gordon Research Conference</strong>, Cellular and Molecular Biology USA – Participant.</li>
+        <li><strong>ICRPMC 2025</strong>, Vancouver, Canada – Presenter and Dr. Pierre Hucl Early Career Award recipient.</li>
+        <li><strong>Evogenomics Workshop</strong>, Czech Republic – Attendee (2023) and Mentor/Teaching Assistant (2024).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Awards & Fellowships</h2>
+      <ul>
+        <li><strong>Orange Knowledge program (OKP) Fellowship</strong>, The Netherlands (2020–2022).</li>
+        <li><strong>KAUST Graduate Fellowship</strong>, Saudi Arabia (2022–2027).</li>
+        <li><strong>Dr. Pierre Hucl Early Career Award</strong>, ICRPMC 2025.</li>
+      </ul>
+    </section>
+
     <section>
       <h2>Contact</h2>
       <p>Email: <a href="mailto:karthick.gajendiran@kaust.edu.sa">karthick.gajendiran@kaust.edu.sa</a></p>
